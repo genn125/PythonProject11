@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ # 3) - Изменение списка приложений, регистрация приложения, которое мы создали (shop)б(
+    'shop.apps.ShopConfig'          # пакет shop, в нем модуль apps, вызываем класс ShopConfig
 ]
 
 MIDDLEWARE = [

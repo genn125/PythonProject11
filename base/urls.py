@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls'))  # Все маршруты из файла shop\urls.py будут доступны тут
+# 1) Маршруты, Все маршруты из файла shop\urls.py будут доступны тут
+    path('shop/', include('shop.urls'))
 ]

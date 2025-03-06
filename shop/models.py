@@ -2,6 +2,8 @@ from django.utils import timezone
 
 from django.db import models
 
+# 2) СОЗДАНИЕ МОДЕЛЕЙ
+
 # Создание модели "категории курсов обучения" в каждой записи которой есть два поля
 class Category(models.Model):
     title = models.CharField(max_length=255) # значение в виде строки с максимальной длинной строки 255
