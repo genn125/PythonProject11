@@ -11,7 +11,7 @@ class Category(models.Model):
 
 # Создание модели "курсы обучения в составе категории"
 class Curse(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=300)
 
     price = models.FloatField() # цена = число с плавающей точкой
     students_qty = models.IntegerField() # количество студентов = целое число
