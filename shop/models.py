@@ -2,7 +2,7 @@ from django.utils import timezone
 
 from django.db import models
 
-# 2) СОЗДАНИЕ МОДЕЛЕЙ
+# 10) СОЗДАНИЕ МОДЕЛЕЙ
 
 # Создание модели "категории курсов обучения" в каждой записи которой есть два поля
 class Category(models.Model):

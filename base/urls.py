@@ -19,6 +19,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-# 1) Маршруты, Все маршруты из файла shop\urls.py будут доступны тут
+# 4) Включаем Все маршруты из файла shop\urls.py, они будут доступны тут
     path('shop/', include('shop.urls'))
+# 'shop/' маршрут ведет в приложение shop, include('shop.urls') - включить все маршруты shop.urls
 ]
+''' После 'shop/' могут быть course/10  или categories, которые настраиваются в файле 'shop.urls'
+'''
+
+
+
