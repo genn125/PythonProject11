@@ -12,12 +12,11 @@ class Category(models.Model):
 # Создание модели "курсы обучения в составе категории"
 class Curse(models.Model):
     title = models.CharField(max_length=300)
-
     price = models.FloatField() # цена = число с плавающей точкой
     students_qty = models.IntegerField() # количество студентов = целое число
     reviews_qty = models.IntegerField() # количество отзывов = целое число
     category = models.ForeignKey(Category, on_delete=models.CASCADE) # категория = ключ из другой таблицы (Категория,
-                                                                      # при удалении которой удаляются все курсы).
+                                                                    # при удалении которой удаляются все курсы).
     created_at = models.DateTimeField(default=timezone.now)
 
 
