@@ -40,7 +40,7 @@ INSTALLED_APPS = [
  # 11) - Изменение списка приложений, регистрация приложения, которое мы создали (shop)б(
     'shop.apps.ShopConfig'          # пакет shop, в нем модуль apps, вызываем класс ShopConfig
 ]
-
+  # 12) переходим в терминал
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

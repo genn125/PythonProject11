@@ -8,13 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('shop', '0001_initial'),
+        ('shop', '0001_initial'),     # эта миграция зависит от миграции 0001, созданной на 13) и 14) пункте
     ]
 
-    operations = [
+    operations = [     # указывает, какие операции нужно выполнить
         migrations.AlterField(
             model_name='curse',
             name='title',
-            field=models.CharField(max_length=300),
+            field=models.CharField(max_length=300),     # это и есть изменение 255 на 300
         ),
     ]

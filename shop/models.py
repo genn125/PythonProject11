@@ -1,4 +1,4 @@
-from django.utils import timezone
+from django.utils import timezone    # для создания =timezone.now
 
 from django.db import models
 

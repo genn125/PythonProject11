@@ -15,10 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include  # это делаем сами, затем 4)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
 # 4) Включаем Все маршруты из файла shop\urls.py, они будут доступны тут
     path('shop/', include('shop.urls'))
 # 'shop/' маршрут ведет в приложение shop, include('shop.urls') - включить все маршруты shop.urls
