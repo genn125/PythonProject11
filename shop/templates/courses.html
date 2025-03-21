@@ -1,5 +1,6 @@
-<table>
-    <thead>
+
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
         <tr>
             <th>Title</th>
             <th>Category</th>
@@ -15,7 +16,7 @@
             <td>{{ curse.category }}</td>
             <td>{{ curse.price }}</td>
             <td>{{ curse.students_qty }}</td>
-            <td>,<button>Bay</button></td>
+            <td><button class="btn btn-primary">Bay</button></td>
         </tr>
         {% endfor %}
     </tbody>

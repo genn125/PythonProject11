@@ -8,7 +8,7 @@ from .models import Curse
 '''функция вида, назвали index потому что принимает запрос от клиента 
 (отвечает за то, что возвращается при обращении пользователя 
 на главную страницу приложения shop)'''
-
+'''
 # 1) функция вида
 #
 # def index(request):
@@ -24,6 +24,8 @@ from .models import Curse
 #     return HttpResponse(curses)
 
 # 25) Используем файл шаблона html, созданного на 24)
+'''
+
 def index(request):
    curses = Curse.objects.all()
    return render(request, 'courses.html', {'courses':curses})  # возвращаем результат вызова функции render
