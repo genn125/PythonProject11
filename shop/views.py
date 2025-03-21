@@ -32,4 +32,13 @@ def index(request):
 # request запрос от клиента, который получает функция index, courses.html - название шаблона
 
 # 26) добавляем 3-й аргумент в render (передаём последовательность curses в функцию render)
-# и меняем шаблон, вставляя эту последовательность в шаблон в виде кода пайтон
+# и меняем шаблон, вставляя эту последовательность в шаблон в виде кода python
+
+def single_course(request, course_id):  # 28a) связь с urls.py
+   course = Curse.object.get(pk=course_id)  # 28b) ищем 1 курс по ид курса
+   return render(request, 'single_course.html', {'course':course})
+   # 28) single_course.html - новый шаблон 1 курса и внутри него у нас будет доступ к переменной course
+
+
+
+
