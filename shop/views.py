@@ -19,8 +19,15 @@ from .models import Curse
 #
 
 # 23a)
+# def index(request):
+#     curses = Curse.objects.all()
+#     return HttpResponse(curses)
+
+# 25) Используем файл шаблона html, созданного на 24)
 def index(request):
-    curses = Curse.objects.all()
-    return HttpResponse(curses)
+   curses = Curse.objects.all()
+   return render(request, 'courses.html', {'courses':curses})  # возвращаем результат вызова функции render
+# request запрос от клиента, который получает функция index, courses.html - название шаблона
 
-
+# 26) добавляем 3-й аргумент в render (передаём последовательность curses в функцию render)
+# и меняем шаблон, вставляя эту последовательность в шаблон в виде кода пайтон
