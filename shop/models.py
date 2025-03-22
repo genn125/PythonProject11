@@ -29,7 +29,7 @@ class Course(models.Model):
 
     # 21в) Добавление магического метода для изменения названия таблиц на сайте в админ панели
     def __str__(self):    # конвертация Curse object на сайте в название курса удобочитаемо
-        return self.title + ' ' + str(self.students_qty) + ' ' + 'человек'  # Можно использовать и f-строку
+        return self.title + ' ' + 'на' + ' ' + str(self.students_qty) + ' ' + 'человек'  # Можно использовать и f-строку
 
 
 
