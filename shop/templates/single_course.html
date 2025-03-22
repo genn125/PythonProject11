@@ -3,10 +3,11 @@
 {% block title %}{{ course.title }}{% endblock %}<!-- Это заголовок вкладки страницы для вставки в base.html-->
 
 {% block content %}
-<h1>{{ course.title }}</h1>
+<h1 class="mt-5">{{ course.title }}</h1>
 <h2>{{ course.category }}</h2>
-<p>{{ course.price }}</p>
-<p>{{ course.students_qty }}</p>
+<p>Цена: {{ course.price }}</p>
+<p> Количество студентов: {{ course.students_qty }}</p>
 <button class="btn btn-primary">Кнопка</button>
 {% endblock %}
 
+<!--30) создание шаблона для отдельных курсов-->

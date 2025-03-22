@@ -1,23 +1,17 @@
 from django.shortcuts import render
-from django.http import  HttpResponse
+from django.http import  HttpResponse, Http404
 # 23) Изменяем отображение нашей страницы на сайте
-# from . import models
 from .models import Course
-'''функция вида, назвали index потому что принимает запрос от клиента 
-(отвечает за то, что возвращается при обращении пользователя 
-на главную страницу приложения shop)
-# 1) функция вида
-# 1a) после функцию index необходимо привязать к определенному маршруту в рамках приложения shop
-# для этого в папке приложения создаем файл urls.py (в нем будут маршруты только для этого приложения
-#def index(request):
-   return HttpResponse('Hello from the Shop app')
-# 23a)
-# def index(request):
-#     curses = Course.objects.all()
-#     return HttpResponse(courses)
-# 25) Используем файл шаблона html, созданного на 24)  
-'''
-
+'''функция вида, назвали index потому что принимает запрос от клиента (отвечает за то, что возвращается 
+ при обращении пользователя на главную страницу приложения shop)
+1) функция вида: 1a) после функцию index необходимо привязать к определенному маршруту в рамках приложения shop
+для этого в папке приложения создаем файл urls.py (в нем будут маршруты только для этого приложения
+   def index(request):
+      return HttpResponse('Hello from the Shop app')
+23a)def index(request):
+      curses = Course.objects.all()
+      return HttpResponse(courses)'''
+#25) Используем файл шаблона html, созданного на 24)
 def index(request):
    courses = Course.objects.all()
    return render(request, 'courses.html', {'courses':courses})  # возвращаем результат вызова функции render
@@ -25,10 +19,14 @@ def index(request):
 # 26) добавляем 3-й аргумент в render (передаём последовательность courses в функцию render)
 # и меняем шаблон courses.html, вставляя эту последовательность в шаблон <tbody> в виде кода python
 
-def single_course(request, course_id):  # 28a) связь с urls.py
-   course = Course.object.get(pk=course_id)  # 28b) ищем 1-й курс по id курса (записали это в urls.py)
-   return render(request, 'single_course.html', {'course': course})
-   # 28) single_course.html - новый шаблон (страница) 1-ого курса и внутри него у нас будет доступ к переменной course
+def single_course(request, course_id):  # 29a) связь с urls.py
+   # 31) Отображение страницы 404 (try except)
+   try:
+      course = Course.objects.get(pk=course_id)  # 29b) ищем 1-й курс по id курса (записали это в urls.py)
+      return render(request, 'single_course.html', {'course': course})
+      # 29) single_course.html - новый шаблон (страница) одного курса и внутри него у нас будет доступ к переменной course
+   except Course.DoesNotExist:
+      raise Http404()
 
 
 
