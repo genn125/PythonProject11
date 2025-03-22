@@ -27,7 +27,7 @@ def index(request):
 
 def single_course(request, course_id):  # 28a) связь с urls.py
    course = Course.object.get(pk=course_id)  # 28b) ищем 1-й курс по id курса (записали это в urls.py)
-   return render(request, 'single_course.html', {'course':course})
+   return render(request, 'single_course.html', {'course': course})
    # 28) single_course.html - новый шаблон (страница) 1-ого курса и внутри него у нас будет доступ к переменной course
 
 
