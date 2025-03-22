@@ -2,6 +2,7 @@
 {% extends 'base.html' %}<!--этот шаблон расширяет базовый шаблон base.html-->
 <!-- Это заголовок вкладки страницы для вставки в base.html-->
 {% block title %}ВСЕ КУРСЫ{% endblock %}
+
 <!--Отсюда(Сюда) вставляется таблица из шаблона в base.html-->
 {% block content %}
 <table class="table mt-5 table-bordered table-striped table-hover">
@@ -15,12 +16,12 @@
         </tr>
     </thead>
     <tbody>
-        {% for curse in courses %}
+        {% for course in courses %}
         <tr>
-            <td>{{ curse.title }}</td>
-            <td>{{ curse.category }}</td>
-            <td>{{ curse.price }}</td>
-            <td>{{ curse.students_qty }}</td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.category }}</td>
+            <td>{{ course.price }}</td>
+            <td>{{ course.students_qty }}</td>
             <td><button class="btn btn-primary">Bay</button></td>
         </tr>
         {% endfor %}

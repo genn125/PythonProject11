@@ -16,7 +16,7 @@ class Category(models.Model):
 
 
 # Создание модели "курсы обучения в составе категории"
-class Curse(models.Model):
+class Course(models.Model):
     title = models.CharField(max_length=300)
     price = models.FloatField() # цена = число с плавающей точкой
     students_qty = models.IntegerField() # количество студентов = целое число
@@ -26,7 +26,7 @@ class Curse(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     # 21в) Добавление магического метода для изменения названия таблиц на сайте в админ панели
-    def __str__(self):    # конвертация Curse object (1) и Curse object (2) на сайте в название курса удобочитаемо
+    def __str__(self):    # конвертация Curse object на сайте в название курса удобочитаемо
         return self.title + ' ' + str(self.students_qty) + ' ' + 'человек'  # Можно использовать и f-строку
 
 
