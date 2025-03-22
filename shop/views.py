@@ -22,8 +22,9 @@ def index(request):
    courses = Course.objects.all()
    return render(request, 'courses.html', {'courses':courses})  # возвращаем результат вызова функции render
 # request запрос от клиента, который получает функция index, courses.html - название шаблона
-# 26) добавляем 3-й аргумент в render (передаём последовательность curses в функцию render)
-# и меняем шаблон, вставляя эту последовательность в шаблон в виде кода python
+# 26) добавляем 3-й аргумент в render (передаём последовательность courses в функцию render)
+# и меняем шаблон courses.html, вставляя эту последовательность в шаблон <tbody> в виде кода python
+
 def single_course(request, course_id):  # 28a) связь с urls.py
    course = Course.object.get(pk=course_id)  # 28b) ищем 1 курс по ид курса
    return render(request, 'single_course.html', {'course':course})
