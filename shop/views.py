@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import  HttpResponse, Http404
 # 23) Изменяем отображение нашей страницы на сайте
 from .models import Course
@@ -20,14 +20,18 @@ def index(request):
 # и меняем шаблон courses.html, вставляя эту последовательность в шаблон <tbody> в виде кода python
 
 def single_course(request, course_id):  # 29a) связь с urls.py
-   # 31) Отображение страницы 404 (try except)
-   try:
-      course = Course.objects.get(pk=course_id)  # 29b) ищем 1-й курс по id курса (записали это в urls.py)
-      return render(request, 'single_course.html', {'course': course})
-      # 29) single_course.html - новый шаблон (страница) одного курса и внутри него у нас будет доступ к переменной course
-   except Course.DoesNotExist:
-      raise Http404()
 
+# 31) Отображение страницы 404 ВАРИАНТ 1: (try except)
+#    try:
+#       course = Course.objects.get(pk=course_id)  # 29b) ищем 1-й курс по id курса (записали это в urls.py)
+#       return render(request, 'single_course.html', {'course': course})
+#       # 29) single_course.html - новый шаблон (страница) одного курса и внутри него у нас будет доступ к переменной course
+#    except Course.DoesNotExist:
+#       raise Http404()
 
+# 31) Отображение страницы 404 ВАРИАНТ 2: (Импорт функции get_object_or_404)
+
+   course = get_object_or_404(Course, pk=course_id)
+   return render(request, 'single_course.html', {'course': course})
 
 

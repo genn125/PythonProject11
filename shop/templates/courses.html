@@ -19,7 +19,14 @@
     <tbody>
         {% for course in courses %}
         <tr>
-            <td>{{ course.title }}</td>
+            <td>
+<!--ВАРИАНТ 2: использование названия путей name='single_course' из url.py, префикс автоматически прописывается-->
+                <a href={% url "single_course" course.id %} > {{ course.title }}</a>
+
+<!-- ВАРИАНТ 1: по id курса (не рекомендуется так как префикс АБСОЛЮТНОЙ ссылки не прописывается автоматически)
+                <a href={{ course.id }}>{{ course.title }}</a>-->
+
+            </td>
             <td>{{ course.category }}</td>
             <td>{{ course.price }}</td>
             <td>{{ course.students_qty }}</td>
